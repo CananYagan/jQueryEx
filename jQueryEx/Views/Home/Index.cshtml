@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">JQuery Examples</h1>
+    <p>Lorem Ipsum</p>
+    <button id="j1">Show</button>
+    <button id="j2">Hide</button>
+    <button id="j3">Show-Hide</button>
+    <button id="j4">Append</button>
+    <button id="j5">Array</button>
+    <ul id="ul1"></ul>
+
+</div>
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script>
+    $("h1").on({
+        mouseover: function () {
+            $(this).css("color", "red");
+        },
+        mousedown: function () {
+            $(this).css("color", "blue");
+        }
+    })
+       // Parts like on,click event,$ are selectors.
+    $("#j1").click(function () {
+        $("p").show(),
+            $("h1").show(),
+            $(this).css("background-color","pink")
+    })
+    $("#j2").click(function () {
+        $("p").hide(),
+            $("h1").hide(),
+            $(this).css("background-color", "white")
+    })
+    $("#j3").click(function () {
+        $("p").toggle(1000),
+            $(this).css("background-color", "green")
+    })
+    $("#j4").css({ "background-color": "white", "color": "red","font-size":"20px"})
+
+    var songs = ["benden ziyade", "arkadasim esek", "sari cizmeli..", "kol düğmelerl"]
+    $("#j5").click(function () {
+        $.each(songs, function (key,value) {
+            $("#ul1").append("<li>" + value + "</li>")
+        })
+    })
+
+
+
+
+</script>
